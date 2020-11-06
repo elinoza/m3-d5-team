@@ -96,10 +96,7 @@ const filterAlbums = (event) => {
 };
 
 /**********FOOOTER PLAY MUSIC************/
-const x = document.getElementById("myAudio");
-function playAudio() {
-  x.play();
-}
+
 
 function changevolume(amount) {
   const audioobject = document.getElementsByTagName("audio")[0];
@@ -107,8 +104,21 @@ function changevolume(amount) {
 }
 const playmusic = (id) => {
   id = "/album/" + id;
+  let albumCover = document.querySelector(".song-info-cover")
+  let songName = document.querySelector("#songName")
+  let artistName = document.querySelector("#artistName")
+  let trackPlay = document.querySelector("source")
   fetchAlbums(id, (body) => {
     track = body.tracks.data[0];
-    console.log(track);
+    console.log(track)
+    albumCover.src=track.artist.md5_image
+    artistName.innerHTML=track.artist.name
+    songName.innerHTML=track.title
+    trackPlay.src=track.preview
+    x.play()
   });
 };
+const x = document.getElementById("myAudio");
+function playAudio() {
+  x.play();
+}
