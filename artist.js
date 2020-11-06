@@ -22,11 +22,12 @@ let fetchAlbums = (endp, data) => {
     })
 
     .catch((err) => {
-      alert("AN ERROR HAS OCCURRED  " + err);
+      // alert("AN ERROR HAS OCCURRED  " + err);
       console.error(err);
     });
 };
 let pages = ["#overview", "#fans", "#about"];
+
 const loadAlbums = () => {
   let endpoint = window.location.href.split("id=")[1];
   console.log(endpoint);
@@ -67,10 +68,10 @@ const getTracks = (tracks) => {
   });
 };
 //Get Albums
-const getAlbums=()=>{
-    fetchAlbums(tracks, (tracklist) => {
-        const destination = document.querySelector("#myTab");
-        let list = document.createElement("tbody");
-        for (let i = 0; i < 5; i++) {
-
-}
+const getAlbums = () => {
+  fetchAlbums(tracks, (tracklist) => {
+    const destination = document.querySelector("#myTab");
+    let list = document.createElement("tbody");
+    for (let i = 0; i < 5; i++) {}
+  });
+};
