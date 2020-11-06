@@ -39,8 +39,8 @@ const loadAlbums = () => {
   const pages = ["#trending", "#contents", "#mooDandGenres", "#newReleases", "#discover"];
   pages.forEach((page, index) => {
     endpoint[index].forEach((el) => {
-      el = "search?q=" + el;
-      fetchAlbums(el, (body) => {
+      const endp = "search?q=" + el;
+      fetchAlbums(endp, (body) => {
         //console.log(body.data);
         let cards = document.createElement("div");
         cards.classList.add("row");
