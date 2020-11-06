@@ -95,128 +95,78 @@
           </ul>
         </div>
 
+
+
         <div class="main-part col-12 col-md-9 col-lg-10  mb-5 pb-5 ">
-
-
-          <ul class="nav mb-3 justify-content-center p-3  main-nav bg-none" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#trending" role="tab"
-                aria-controls="pills-home" aria-selected="true">TRENDS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#contents" role="tab"
-                aria-controls="pills-profile" aria-selected="false">CONTENTS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#mooDandGenres" role="tab"
-                aria-controls="pills-contact" aria-selected="false">MOOD AND GENRES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#newReleases" role="tab"
-                aria-controls="pills-profile" aria-selected="false">NEW RELEASES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#discover" role="tab"
-                aria-controls="pills-contact" aria-selected="false">DISCOVER</a>
-            </li>
-          </ul>
-
-          <div class="tab-content " id="pills-tabContent">
-            <div class="tab-pane fade show active" id="trending" role="tabpanel" aria-labelledby="pills-home-tab">
-
-            </div>
-
-            <div class="tab-pane fade" id="contents" role="tabpanel" aria-labelledby="pills-profile-tab">
-              <div>
-
-
-              </div>
-            </div>
-            <div class="tab-pane fade" id="mooDandGenres" role="tabpanel" aria-labelledby="pills-contact-tab">
-              <div>
-
-
-              </div>
-            </div>
-            <div class="tab-pane fade" id="newReleases" role="tabpanel" aria-labelledby="pills-contact-tab">
-              <div>
-
-
-              </div>
-
-            </div>
-            <div class="tab-pane fade" id="discover" role="tabpanel" aria-labelledby="pills-contact-tab">
-              <div>
-
-
-              </div>
-            </div>
-          </div>
-
-
-
+          <form action="search" method="get">
+            <input type="search" name="search" class="form-control w-25" oninput="filterAlbums(event)" id="search">
+            <button type="button" class="btn btn-light" onclick="searchAlbums()">Search</button>
+          </form>
+          <div id="Results"></div>
         </div>
       </div>
-    </div>
-    <footer class="page-footer font-small text-white">
-      <div class="container-fluid">
-        <div class="player gradient">
-          <div class="row">
-            <div class="col d-flex justify-content-left form-inline">
-              <img class="song-info-cover" style="width: 70px; padding-bottom: 5px; padding-top: 5px"
-                src="---------------------------------" alt="" />
-              <div class="song-info-text" style="font-size: 10pt; color: white; margin-left: 7px">
-                <div class="song-info-title">--------SONG</div>
-                <div class="song-info-title"><small>--------Artist</small></div>
+
+
+
+      <footer class="page-footer font-small text-white">
+        <div class="container-fluid">
+          <div class="player gradient">
+            <div class="row">
+              <div class="col d-flex justify-content-left form-inline">
+                <img class="song-info-cover" style="width: 70px; padding-bottom: 5px; padding-top: 5px"
+                  src="---------------------------------" alt="" />
+                <div class="song-info-text" style="font-size: 10pt; color: white; margin-left: 7px">
+                  <div class="song-info-title">--------SONG</div>
+                  <div class="song-info-title"><small>--------Artist</small></div>
+                </div>
               </div>
-            </div>
 
-            <div class="col d-flex justify-content-center form-inline" id="playerButtons">
-              <a class="button gradient" id="random" href="" title="">
-                <i class="fa fa-random"></i>
-              </a>
-              <a class="button gradient" id="backward" href="" title="" style="margin-left: 30px">
-                <i class="fa fa-step-backward"></i>
-              </a>
-              <button onclick="playAudio()" type="button" id="play" href="" title="" style="margin-left: 30px">
-                <i class="fa fa-play-circle fa-2x"></i>
-              </button>
-              <a class="button gradient" id="forward" href="" title="" style="margin-left: 30px">
-                <i class="fa fa-step-forward"></i>
-              </a>
-              <a class="button gradient" id="repeat" href="" title="" style="margin-left: 30px">
-                <i class="fa fa-repeat"></i>
-              </a>
+              <div class="col d-flex justify-content-center form-inline" id="playerButtons">
+                <a class="button gradient" id="random" href="" title="">
+                  <i class="fa fa-random"></i>
+                </a>
+                <a class="button gradient" id="backward" href="" title="" style="margin-left: 30px">
+                  <i class="fa fa-step-backward"></i>
+                </a>
+                <button onclick="playAudio()" type="button" id="play" href="" title="" style="margin-left: 30px">
+                  <i class="fa fa-play-circle fa-2x"></i>
+                </button>
+                <a class="button gradient" id="forward" href="" title="" style="margin-left: 30px">
+                  <i class="fa fa-step-forward"></i>
+                </a>
+                <a class="button gradient" id="repeat" href="" title="" style="margin-left: 30px">
+                  <i class="fa fa-repeat"></i>
+                </a>
 
-              <div class="progress-container w-100">
-                <div class="progress-time" id="current-time"></div>
-                <input type="range" id="progress" value="0" class="progress-range" />
-                <div class="progress-time" id="duration"></div>
+                <div class="progress-container w-100">
+                  <div class="progress-time" id="current-time"></div>
+                  <input type="range" id="progress" value="0" class="progress-range" />
+                  <div class="progress-time" id="duration"></div>
+                </div>
               </div>
-            </div>
 
-            <div class="col v-controls-wrapper">
-              <div class="float-right volume-controls">
-                <i class="fa fa-tasks"></i>
-                <i class="fa fa-laptop ml-3"></i>
-                <i class="fa fa-volume-up mx-3"></i>
-                <input type="range" id="seek" value="0" min="0" max="1" step="0.01"
-                  onchange="changevolume(this.value)" />
+              <div class="col v-controls-wrapper">
+                <div class="float-right volume-controls">
+                  <i class="fa fa-tasks"></i>
+                  <i class="fa fa-laptop ml-3"></i>
+                  <i class="fa fa-volume-up mx-3"></i>
+                  <input type="range" id="seek" value="0" min="0" max="1" step="0.01"
+                    onchange="changevolume(this.value)" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <audio id="myAudio">
-        <source src="----------------------" type="audio/mpeg">
-      </audio>
+        <audio id="myAudio">
+          <source src="----------------------" type="audio/mpeg">
+        </audio>
 
-      <script src="/player.js"></script>
+        <script src="/player.js"></script>
 
-    </footer>
+      </footer>
 
-    <script src="/home.js">
-    </script>
+      <script src="/home.js">
+      </script>
 
 
 
