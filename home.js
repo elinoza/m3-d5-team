@@ -22,7 +22,7 @@ let fetchAlbums = (endp, data) => {
     })
 
     .catch((err) => {
-      alert("AN ERROR HAS OCCURRED  " + err);
+      //alert("AN ERROR HAS OCCURRED  " + err);
       console.error(err);
     });
 };

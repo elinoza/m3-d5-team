@@ -1,5 +1,5 @@
 window.onload = () => {
-  window.location.href.includes("index");
+  loadAlbums();
 };
 
 let fetchAlbums = (endp, data) => {
@@ -22,61 +22,56 @@ let fetchAlbums = (endp, data) => {
     })
 
     .catch((err) => {
-      alert("AN ERROR HAS OCCURRED  " + err);
+      // alert("AN ERROR HAS OCCURRED  " + err);
       console.error(err);
     });
 };
-const loadAlbums = (option) => {
-  let endpoint = [],
-    pages = [];
-  if (option === 1) {
-    endpoint = [
-      ["jazz", "classical", "R&B"],
-      ["techno", "indie", "pop"],
-      ["rap", "classical", "R&B"],
-      ["jazz", "classical", "R&B"],
-      ["jazz", "classical", "R&B"],
-    ];
+let pages = ["#overview", "#fans", "#about"];
 
-    pages = ["#trending", "#contents", "#mooDandGenres", "#newReleases", "#discover"];
-  } else {
-    endpoint = [[option]];
-    pages = ["#Results"];
-  }
+const loadAlbums = () => {
+  let endpoint = window.location.href.split("id=")[1];
+  console.log(endpoint);
+  endp = "artist/" + endpoint;
+  console.log(endp);
+  fetchAlbums(endp, (body) => {
+    console.log(body);
+    //CHANGE THE ARTIST NAME
+    const title = document.querySelector("#title");
+    title.innerText = body.name;
+    //CHANGE THE BACKGROUNDIMAGE
+    const img = document.querySelector(".head img");
+    img.src = body.picture_big;
+    //GET TRACKS
+    getTracks(body.tracklist.split("com/")[1]);
+    //GET ALBUMS
+    getAlbums("search?q=" + body.name);
+  });
+};
+//Get Tracks for popular
+const getTracks = (tracks) => {
+  fetchAlbums(tracks, (tracklist) => {
+    const destination = document.querySelector("#myTabContent table");
+    let list = document.createElement("tbody");
+    for (let i = 0; i < 5; i++) {
+      const track = tracklist.data[i];
 
-  let endp;
-  pages.forEach((page, index) => {
-    endpoint[index].forEach((el) => {
-      endp = "search?q=" + el;
-      fetchAlbums(endp, (body) => {
-        //console.log(body.data);
-        let cards = document.createElement("div");
-        cards.classList.add("row");
-        const destination = document.querySelector(page);
-        const header = document.createElement("h3");
-        header.innerText = el.toUpperCase();
-        body.data.forEach((element, index) => {
-          index < 10
-            ? (cards.innerHTML += `<div class="col-12 col-md-4  col-lg-2 px-2">
-          <div class="card bg-transparent border-0 text-center">
-          <a href='/Album Page.html?id=${element.album.id}'>
-            <img
-              src="${element.album.cover}"
-              class="card-img-top"
-              alt="..."
-            />
-            </a>
-            <div class="card-body">
-              <button class="card-text  btn text-truncate text-white" onclick="playmusic(${element.album.id})" style="max-width: 150px;">${element.album.title}</button>
-              <a class="card-text text-truncate text-muted"  href='/artist.html?id=${element.artist.id}'  style="max-width: 150px;">${element.artist.name}</a>
-            </div>
-          </div>
-        </div>`)
-            : "";
-        });
-        destination.appendChild(header);
-        destination.appendChild(cards);
-      });
-    });
+      list.innerHTML += `<tr>
+          <th scope="row">${i + 1}<img class="ml-3" src="${track.album.cover}" style="width: 2.5rem">
+          </th>
+          <td class="play"><i class="fas fa-play-circle"></i></td>
+          <td><a class="text-truncate text-muted">${track.title}</a></td>
+          <td></td>
+          <td>${(track.duration / 60).toFixed(0)}:${((track.duration / 60 - (track.duration / 60).toFixed(0)) * 60).toFixed(0)}</td></tr>
+        `;
+    }
+    destination.appendChild(list);
+  });
+};
+//Get Albums
+const getAlbums = () => {
+  fetchAlbums(tracks, (tracklist) => {
+    const destination = document.querySelector("#myTab");
+    let list = document.createElement("tbody");
+    for (let i = 0; i < 5; i++) {}
   });
 };
