@@ -1,6 +1,5 @@
 window.onload = () => {
   loadAlbums();
-  getMusic();
 };
 
 let fetchAlbums = (endp, data) => {
