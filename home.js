@@ -59,7 +59,7 @@ const loadAlbums = (option) => {
           index < 10
             ? (cards.innerHTML += `<div class="col-12 col-md-4  col-lg-2 px-2">
         <div class="card bg-transparent border-0 text-center">
-        <a href='/Album Page.html?id=${element.album.id}'>
+        <a href='./Album Page.html?id=${element.album.id}'>
           <img
             src="${element.album.cover}"
             class="card-img-top"
