@@ -1,1488 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotify</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/68fbc1d12b.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://use.typekit.net/zqk4trm.css"/>
-  <link rel="shortcut icon" href="assets/logos/iconfinder_spotify_1632528.png" />
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/68fbc1d12b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/zqk4trm.css" />
+    <link rel="shortcut icon" href="assets/logos/iconfinder_spotify_1632528.png" />
 
   <body>
     <div class="container-fluid">
       <div class="nav-item dropdown d-d-block d-md-none hamburger-menu ">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="index.html">Home</a>
           <a class="dropdown-item" href="Album Page.html">Your Library</a>
-         
+
           <a class="dropdown-item" href="artist.html">Liked Songs</a>
         </div>
       </div>
 
-      
-      
+
+
       <div class="row">
-        <div  class="  col-md-3 col-lg-2   " style="background-color:black">
-         
-          
-                  <ul class="nav flex-column d-none d-md-block   " id="side-bar">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="index.html">
-                        <img
-                          class="title img-fluid"
-                          src="assets/logos/Spotify_Logo_CMYK_White.png"
-                          alt="spotify logo"
-                      /></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link mt-2" href="index.html"
-                        ><svg
-                          width="1.5em"
-                          height="2em"
-                          viewBox="0 0 16 16"
-                          class="bi bi-house-door mr-3 ml-1"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/></svg>Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"
-                        ><svg
-                          width="1.5em"
-                          height="2em"
-                          viewBox="0 0 16 16"
-                          class="bi bi-search mr-3 ml-1"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            fill-rule="evenodd"
-                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg>Search</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="Album Page.html"
-                        ><svg
-                          width="1.5em"
-                          height="2em"
-                          viewBox="0 0 16 16"
-                          class="bi bi-bar-chart-line mr-3 ml-1"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
-                          /></svg>Your Library</a
-                      >
-                    </li>
-                    <li class="playlist nav-item">
-                      <p style="color: grey" class="ml-3 mt-4">PLAYLISTS</p>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="artist.html"
-                        ><svg
-                          width="1.5em"
-                          height="2em"
-                          viewBox="0 0 16 16"
-                          class="bi bi-plus-square-fill mr-3 ml-1"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/></svg>Create Playlist</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="artist.html"
-                        ><svg
-                          width="1.5em"
-                          height="2em"
-                          viewBox="0 0 16 16"
-                          class="bi bi-suit-heart-fill mr-3 ml-1"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"
-                          /></svg>Liked Songs</a>
-                    </li>
-                    <hr />
-                    <li class="nav-item">
-                      <a class="nav-link" href="signUp.html"><button type="button" class="btn-sign">SIGN UP</button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="signUp.html"><button type="button" class="btn-login">LOGIN</button></a>
-                    </li>
-                  </ul>
+        <div class="  col-md-3 col-lg-2   " style="background-color:black">
+
+
+          <ul class="nav flex-column d-none d-md-block   " id="side-bar">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">
+                <img class="title img-fluid" src="assets/logos/Spotify_Logo_CMYK_White.png" alt="spotify logo" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mt-2" href="index.html"><svg width="1.5em" height="2em" viewBox="0 0 16 16"
+                  class="bi bi-house-door mr-3 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z" />
+                  <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" /></svg>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><svg width="1.5em" height="2em" viewBox="0 0 16 16"
+                  class="bi bi-search mr-3 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                  <path fill-rule="evenodd"
+                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg>Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Album Page.html"><svg width="1.5em" height="2em" viewBox="0 0 16 16"
+                  class="bi bi-bar-chart-line mr-3 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
+                </svg>Your Library</a>
+            </li>
+            <li class="playlist nav-item">
+              <p style="color: grey" class="ml-3 mt-4">PLAYLISTS</p>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="artist.html"><svg width="1.5em" height="2em" viewBox="0 0 16 16"
+                  class="bi bi-plus-square-fill mr-3 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                </svg>Create Playlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="artist.html"><svg width="1.5em" height="2em" viewBox="0 0 16 16"
+                  class="bi bi-suit-heart-fill mr-3 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                </svg>Liked Songs</a>
+            </li>
+            <hr />
+            <li class="nav-item">
+              <a class="nav-link" href="signUp.html"><button type="button" class="btn-sign">SIGN UP</button></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signUp.html"><button type="button" class="btn-login">LOGIN</button></a>
+            </li>
+          </ul>
         </div>
 
-        <div class="main-part col-12 col-md-9 col-lg-10  mb-5 pb-5 ">       
-         
-        
-              <ul
-                class="nav mb-3 justify-content-center p-3  main-nav bg-none"
-                id="pills-tab"
-                role="tablist"
-              >
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    id="pills-home-tab"
-                    data-toggle="pill"
-                    href="#trending"
-                    role="tab"
-                    aria-controls="pills-home"
-                    aria-selected="true"
-                    >TRENDS</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-profile-tab"
-                    data-toggle="pill"
-                    href="#contents"
-                    role="tab"
-                    aria-controls="pills-profile"
-                    aria-selected="false"
-                    >CONTENTS</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-contact-tab"
-                    data-toggle="pill"
-                    href="#mooDandGenres"
-                    role="tab"
-                    aria-controls="pills-contact"
-                    aria-selected="false"
-                    >MOOD AND GENRES</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-profile-tab"
-                    data-toggle="pill"
-                    href="#newReleases"
-                    role="tab"
-                    aria-controls="pills-profile"
-                    aria-selected="false"
-                    >NEW RELEASES</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    id="pills-contact-tab"
-                    data-toggle="pill"
-                    href="#discover"
-                    role="tab"
-                    aria-controls="pills-contact"
-                    aria-selected="false"
-                    >DISCOVER</a
-                  >
-                </li>
-              </ul>
-       
-              <div class="tab-content " id="pills-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="trending"
-                  role="tabpanel"
-                  aria-labelledby="pills-home-tab"
-                >
-                      
-                        <h3>Recently Played</h3>
-                        <div class="row">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home7.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/images/alvays.png"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home10.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home11.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home12.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/images/sutliman.png"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      
-                            
-              
-                        <h3>Your Unique Choices</h3>
-                        <div class="row justify-content-start ">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home13.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/images/viral50.png"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home15.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home14.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>  
-                        </div>
-                        <h3>Hit Rewind</h3>
-                        <div class="row">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home1.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home3.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home8.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home9.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/ten.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      
-                            
-              
-                        <h3>Today's Top Hits</h3>
-                        <div class="row justify-content-start ">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home2.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home3.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home4.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home5.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>  
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home6.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home7.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>  
-                        </div>
-                      </div>
-                
-                <div
-                  class="tab-pane fade"
-                  id="contents"
-                  role="tabpanel"
-                  aria-labelledby="pills-profile-tab"
-                >
-                      <div>
-                        <h3>Recently Played</h3>
-                        <div class="row ">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                             
-                              <img
-                                src="assets/artist.images/home15.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                            
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home2.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home3.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home4.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home5.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home6.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h3>Recently Played</h3>
-                        <div class="row ">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                             
-                              <img
-                                src="assets/artist.images/home7.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                            
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home8.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home9.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home10.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home11.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2  px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/home12.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                            
-              
-                        <h3>Chill</h3>
-                        <div class="row justify-content-start ">
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/chil.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              
-                              <img
-                                src="assets/artist.images/chil1.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                            
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets/artist.images/chill.jpg"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4  col-lg-2 px-2">
-                            <div class="card bg-transparent border-0 text-center">
-                              <img
-                                src="assets\images\4.png"
-                                class="card-img-top"
-                                alt="..."
-                              />
-                              <div class="card-body">
-                                <p class="card-text">Acoustic</p>
-                              </div>
-                            </div>
-                          </div>  
-                        </div>
-                      </div>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="mooDandGenres"
-                  role="tabpanel"
-                  aria-labelledby="pills-contact-tab"
-                >
-                  <div>
-                  <h3>Chill</h3>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/chill.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/chil1.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/chil.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/all.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                  <h3>#TOP 50</h3>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/viral50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50-2.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50-3.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                  <h3>Recently Played</h3>
-                  <div class="row">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/home9.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/home8.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/home7.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/home6.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/home5.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/chill.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                      
-                    </div>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="newReleases"
-                  role="tabpanel"
-                  aria-labelledby="pills-contact-tab"
-                >
-                <div>
-                  <h3>Discover More</h3>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/disc.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/disc1.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/disc2.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/artist.images/disc3.jpg"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                  <h3>#THROWBACKTHURSDAY</h3>
-                  <div class="row">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\acoustic.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\alvays.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\caz.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\happy.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\sutliman.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\kure.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                      
-        
-                  <h3>#TOP 50</h3>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\top50-2.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\top50-3.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\top50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\viral50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                </div>
+        <div class="main-part col-12 col-md-9 col-lg-10  mb-5 pb-5 ">
 
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="discover"
-                  role="tabpanel"
-                  aria-labelledby="pills-contact-tab"
-                >
-                <div >
-                  <h3>Recently Played</h3>
-                  <div class="row">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\11.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/19.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\18.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/17.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/16.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/15.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                      
-        
-                  <h5>Your Unique Choices</h5>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/viral50.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50-2.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/top50-3.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                  <h3>Recently Played</h3>
-                  <div class="row">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\12.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\13.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\14.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\15.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\16.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2  px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets\images\17.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                      
-        
-                  <h5>Your Unique Choices</h5>
-                  <div class="row justify-content-start ">
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/24.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/23.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/22.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/21.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/19.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4  col-lg-2 px-2">
-                      <div class="card bg-transparent border-0 text-center">
-                        <img
-                          src="assets/images/18.png"
-                          class="card-img-top"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-text">Acoustic</p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                </div>
-                </div>
+
+          <ul class="nav mb-3 justify-content-center p-3  main-nav bg-none" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#trending" role="tab"
+                aria-controls="pills-home" aria-selected="true">TRENDS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#contents" role="tab"
+                aria-controls="pills-profile" aria-selected="false">CONTENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#mooDandGenres" role="tab"
+                aria-controls="pills-contact" aria-selected="false">MOOD AND GENRES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#newReleases" role="tab"
+                aria-controls="pills-profile" aria-selected="false">NEW RELEASES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#discover" role="tab"
+                aria-controls="pills-contact" aria-selected="false">DISCOVER</a>
+            </li>
+          </ul>
+
+          <div class="tab-content " id="pills-tabContent">
+            <div class="tab-pane fade show active" id="trending" role="tabpanel" aria-labelledby="pills-home-tab">
+
+            </div>
+
+            <div class="tab-pane fade" id="contents" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <div>
+
+
               </div>
-            
-            
-          
+            </div>
+            <div class="tab-pane fade" id="mooDandGenres" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div>
+
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="newReleases" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div>
+
+
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="discover" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
       </div>
     </div>
+    <footer class="page-footer font-small text-white">
+      <div class="container-fluid">
+        <div class="player gradient">
+          <div class="row">
+            <div class="col d-flex justify-content-left form-inline">
+              <img class="song-info-cover" style="width: 70px; padding-bottom: 5px; padding-top: 5px"
+                src="---------------------------------" alt="" />
+              <div class="song-info-text" style="font-size: 10pt; color: white; margin-left: 7px">
+                <div class="song-info-title">--------SONG</div>
+                <div class="song-info-title"><small>--------Artist</small></div>
+              </div>
+            </div>
 
-    <footer class="nowPlaying  ">
-      <div  class ="row ">
-        <div  class="d-none d-lg-block col-lg-2" id="infos"style=" margin-top: 10px;">
-          <div class="row no-wrap " style=" width: 600px">
-            <div class="col-2"><img src="assets/artist.images/fan1.jpg" class="img-fluid pl-2 mr-1"width="60rem"></div>
-            <div class="col-2 d-flex flex-column align-items-center">
-              <label class="footerText d-inline p-1 m-0 p-0" >Song Title</label>         
-            <label class="footerText d-inline p-1 m-0 p-0">Artist</label></div>
-            <div class="col-1 align-items-center flex-column text-center p-0"><p class="fa fa-heart-o pt-2 mr-5"></p></div>
-            
+            <div class="col d-flex justify-content-center form-inline" id="playerButtons">
+              <a class="button gradient" id="random" href="" title="">
+                <i class="fa fa-random"></i>
+              </a>
+              <a class="button gradient" id="backward" href="" title="" style="margin-left: 30px">
+                <i class="fa fa-step-backward"></i>
+              </a>
+              <button onclick="playAudio()" type="button" id="play" href="" title="" style="margin-left: 30px">
+                <i class="fa fa-play-circle fa-2x"></i>
+              </button>
+              <a class="button gradient" id="forward" href="" title="" style="margin-left: 30px">
+                <i class="fa fa-step-forward"></i>
+              </a>
+              <a class="button gradient" id="repeat" href="" title="" style="margin-left: 30px">
+                <i class="fa fa-repeat"></i>
+              </a>
 
+              <div class="progress-container w-100">
+                <div class="progress-time" id="current-time"></div>
+                <input type="range" id="progress" value="0" class="progress-range" />
+                <div class="progress-time" id="duration"></div>
+              </div>
+            </div>
+
+            <div class="col v-controls-wrapper">
+              <div class="float-right volume-controls">
+                <i class="fa fa-tasks"></i>
+                <i class="fa fa-laptop ml-3"></i>
+                <i class="fa fa-volume-up mx-3"></i>
+                <input type="range" id="seek" value="0" min="0" max="1" step="0.01"
+                  onchange="changevolume(this.value)" />
+              </div>
+            </div>
           </div>
-         
-          
-          <div >
-          
-        </div>
-        
-        
-        </div>
-        <div class=" col-12 col-lg-8 " id="player">
-          <div style="text-align: center; margin-top: 10px">
-            <button class="btn footerIcons">
-              <span class="fa fa-random"></span>
-            </button>
-
-            <button class="btn footerIcons">
-              <span class="fa fa-step-backward"></span>
-            </button>
-
-            <button class="btn footerIcons">
-              <span class="fa fa-play sf-btn-play"></span>
-            </button>
-
-            <button class="btn footerIcons">
-              <span class="fa fa-step-forward"></span>
-            </button>
-
-            <button class="btn footerIcons">
-              <span class="fa fa-retweet"></span>
-            </button>
-
-            
-           
-          </div>
-          <div class=" progress progressBar mb-5  ">
-            <div
-              class="progress-bar "
-              role="progressbar"
-              aria-valuenow="0"
-              aria-valuemin="50"
-              aria-valuemax="70"
-            ></div>
-          </div>
-        </div>
-        <div id="options"  class="d-none d-lg-block col-lg-2" style="text-align:center;margin-top:10px; ">
-         
-          <button class="btn footerIcons">
-            <span class="fa fa-list"></span>
-          </button>
-
-          <button class="btn footerIcons">
-            <span class="fa fa-laptop"></span>
-          </button>
-
-          <button class="btn footerIcons">
-            <span class="fa fa-volume-up"></span>
-          </button>
         </div>
       </div>
-     
+      <audio id="myAudio">
+        <source src="----------------------" type="audio/mpeg">
+      </audio>
+
+      <script src="/player.js"></script>
+
     </footer>
 
-    <script> 
-    function toggle() {
-      // Declare variable menu
-      let menu = document.getElementById("side-bar");
-    
-      // toggle code
-      if (menu.style.display === "block") {
-        menu.style.display = "none";
-      }
-      else {
-        menu.style.display = "block";
-      }
-    }
-    
-    document.getElementById("ham-button").addEventListener("click",toggle);</script>
-   
+    <script src="/home.js">
+    </script>
 
 
 
 
 
-</body>
+
+  </body>
+
 </html>
