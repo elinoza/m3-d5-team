@@ -1,5 +1,5 @@
 window.onload = () => {
-  loadAlbums();
+  window.location.href.includes("index") ? loadAlbums(1) : "";
 };
 
 let fetchAlbums = (endp, data) => {
@@ -26,19 +26,28 @@ let fetchAlbums = (endp, data) => {
       console.error(err);
     });
 };
-const loadAlbums = () => {
-  let endpoint = [
-    ["jazz", "classical", "R&B"],
-    ["techno", "indie", "pop"],
-    ["rap", "classical", "R&B"],
-    ["jazz", "classical", "R&B"],
-    ["jazz", "classical", "R&B"],
-  ];
+const loadAlbums = (option) => {
+  let endpoint = [],
+    pages = [];
+  if (option === 1) {
+    endpoint = [
+      ["jazz", "classical", "R&B"],
+      ["techno", "indie", "pop"],
+      ["rap", "classical", "R&B"],
+      ["jazz", "classical", "R&B"],
+      ["jazz", "classical", "R&B"],
+    ];
 
-  const pages = ["#trending", "#contents", "#mooDandGenres", "#newReleases", "#discover"];
+    pages = ["#trending", "#contents", "#mooDandGenres", "#newReleases", "#discover"];
+  } else {
+    endpoint = [[option]];
+    pages = ["#Results"];
+  }
+
+  let endp;
   pages.forEach((page, index) => {
     endpoint[index].forEach((el) => {
-      const endp = "search?q=" + el;
+      endp = "search?q=" + el;
       fetchAlbums(endp, (body) => {
         //console.log(body.data);
         let cards = document.createElement("div");
@@ -70,6 +79,20 @@ const loadAlbums = () => {
       });
     });
   });
+};
+
+/*******************FOR THE SEARCH PAGE************************ */
+const searchAlbums = () => {
+  const search = document.querySelector("#search").value;
+  const cards = document.querySelectorAll(".card");
+  const h3s = document.querySelectorAll("h3");
+  cards.forEach((card) => card.remove());
+  h3s.forEach((h3) => h3.remove());
+  loadAlbums(search);
+};
+const filterAlbums = (event) => {
+  const search = event.target.value;
+  search.length > 2 ? searchAlbums() : "";
 };
 
 /**********FOOOTER PLAY MUSIC************/
