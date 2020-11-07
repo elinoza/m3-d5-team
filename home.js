@@ -17,7 +17,7 @@ let fetchAlbums = (endp, data) => {
       }
     })
     .then((body) => {
-      // console.log(body);
+      console.log(body);
       data(body);
     })
 
