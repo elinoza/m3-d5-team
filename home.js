@@ -94,6 +94,15 @@ const filterAlbums = (event) => {
   const search = event.target.value;
   search.length > 2 ? searchAlbums() : "";
 };
+var ages = [32, 33, 16, 40];
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+}
 
 /**********FOOOTER PLAY MUSIC************/
 

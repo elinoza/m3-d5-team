@@ -33,6 +33,8 @@ const trackList = document.querySelector("#trackl-col");
         console.log(element)
         
         track.push(element.preview)
+        const playButton=document.getElementById('playButton')
+        playButton.onclick = playTrack
         let trackUl = document.createElement("ul");
         trackUl.className = "tracklist pr-3 p-1";
         trackUl.innerHTML += ` <li class="d-flex">
@@ -43,7 +45,7 @@ const trackList = document.querySelector("#trackl-col");
                               <p>${element.title}</p>
                               <p class="subtitle"><a href="#"> ${element.artist.name} </a></p>
                           </div>
-                          <p class="d-inline subtitle ml-auto">1:13</p>
+                          <p class="d-inline subtitle ml-auto">${element.duration} </p>
                           </a>
                           </li>`;
         let trackList= document.querySelector('#trackList')
@@ -67,13 +69,17 @@ const trackList = document.querySelector("#trackl-col");
        let trackPlay = document.querySelector("#trackPlay") 
        trackPlay.src=element
        trackPlay.controls="none";     
-       trackPLay.preload="auto"; 
-       trackPlay.play(); 
+       trackPLay.preload="auto";
+       playSong 
+       console.log(element)
+       ; 
+      
     })
 
     };
     
     const playSong=()=>{
+      trackPlay.play()
 
     }
     
